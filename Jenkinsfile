@@ -49,7 +49,7 @@ stage('upload to nexus'){
 				[
 					artifactId: 'maven-compiler-plugin', 
 					classifier: '', 
-					file: 'target/false.war', 
+					file: 'target/hello-1.0.war', 
 					type: 'war'
 				]
 			], 
