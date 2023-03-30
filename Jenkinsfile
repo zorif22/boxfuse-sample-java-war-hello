@@ -4,7 +4,7 @@ pipeline{
     stage('Git Cloning'){
 	steps{
 	 script{
-	git branch : 'main', url: 'https://github.com/zorif22/boxfuse-sample-java-war-hello.git'
+	git branch : 'master', url: 'https://github.com/zorif22/boxfuse-sample-java-war-hello.git'
       }
       }	
     }
