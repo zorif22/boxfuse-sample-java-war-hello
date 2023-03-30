@@ -8,5 +8,28 @@ pipeline{
       }
       }	
     }
+	   stage('Unit test'){
+		   steps{
+			   script{
+			   sh 'mvn test'
+			   }
+		   }
+	   }
+   
+	   stage('Intigration Testing'){
+		   steps{
+			   script{
+			   sh 'mvn verify'
+			   }
+		   }
+	   }
+   
+	   stage('Build'){
+		   steps{
+			   script{
+			   sh 'mvn clean install'
+			   }
+		   }
+	   }
    }
 }
