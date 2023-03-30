@@ -31,5 +31,15 @@ pipeline{
 			   }
 		   }
 	   }
+
+	   stage('Code Quality test'){
+		   steps{
+			   script{
+			   withSonarQubeEnv(credentialsId: 'boxfuse') {
+			   sh 'mvn clean package sonar:sonar'
+			   }
+			   }
+		   }
+	   }
    }
 }
