@@ -41,23 +41,23 @@ pipeline{
 			   }
 		   }
 	   }
-stage('upload to nexus'){
+		stage('Upload to nexus'){
 		   steps{
 			   script{
-			 [
-					[
-					artifactId: 'javax.servlet-api', 
+			 	nexusArtifactUploader artifacts:
+				   [
+					[artifactId: 'javax.servlet-api', 
 					classifier: '', 
 					file: 'target/hello-1.0.war', 
-					type: 'war'
-				]
+					type: 'war']
 			], 
-					credentialsId: 'nexus', 
-					groupId: 'javax.servlet', 
-					nexusUrl: '3.110.152.165:8081',
-					nexusVersion: 'nexus3', 
-					protocol: 'http:// http://3.110.152.165:8081/', 
-					repository: 'boxfuse-sample/', version: '3.1.0' 
+				credentialsId: '08f0d3b9-1df3-4ea4-854c-d724fe57f197', 
+				groupId: 'javax.servlet', 
+				nexusUrl: '3.110.152.165:8081',
+				nexusVersion: 'nexus3', 
+				protocol: 'http', 
+				repository: 'boxfuse-sample/', 
+				version: '3.1.0' 
 	   }
    }
    }
